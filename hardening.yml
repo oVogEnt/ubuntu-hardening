@@ -1,0 +1,8 @@
+---
+- name: Run cis hardening
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: run role_cis
+      ansible.builtin.include_role:
+        name: role_cis
