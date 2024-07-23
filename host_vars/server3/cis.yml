@@ -1,5 +1,6 @@
 ---
 ubtu20cis_desktop_required: true
-ubtu20cis_warning_banner: |
-        Authorized uses only. All activity may be monitored and reported.
+setup_audit: false
+run_audit: false
 ...
+
