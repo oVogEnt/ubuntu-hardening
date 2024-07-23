@@ -20,6 +20,9 @@ ubtu20cis_ufw_allow_in:
   - port: 443
     from: any
     proto: udp
+  - port: 31466
+    from: any
+    proto: tcp
 ubtu20cis_sshd:
   log_level: "INFO"
   max_auth_tries: 4
