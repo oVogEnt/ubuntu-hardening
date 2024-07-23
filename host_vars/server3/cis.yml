@@ -2,5 +2,6 @@
 ubtu20cis_desktop_required: true
 setup_audit: false
 run_audit: false
+audit_only: false
 ...
 
