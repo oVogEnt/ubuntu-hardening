@@ -78,7 +78,10 @@
         to_ip: any
         from_port: any
         to_port: any
-        proto: all
+        proto: "{{ item }}"
+      with_items:
+        - tcp
+        - udp
 
     - name: Ensure journald is configured to write logfiles to persistent disk
       lineinfile:
