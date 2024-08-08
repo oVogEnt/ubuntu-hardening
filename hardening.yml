@@ -41,8 +41,8 @@
               password_pbkdf2 root grub.pbkdf2.sha512.10000.<hash>
             create: yes
 
-        - name: Update GRUB configuration
-          ansible.builtin.command: update-grub
+              #- name: Update GRUB configuration
+              #ansible.builtin.command: update-grub
 
     - name: Ensure systemd-timesyncd is configured
       block:
