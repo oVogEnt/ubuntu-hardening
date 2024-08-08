@@ -25,8 +25,24 @@
         line: 'set superusers="root"\npassword_pbkdf2 root grub.pbkdf2.sha512.10000.<hash>'
         create: yes
 
-    - name: Update GRUB configuration
-      ansible.builtin.command: update-grub
+    - name: Ensure bootloader password is set
+      block:
+        - name: Ensure GRUB config directory exists
+          file:
+            path: /etc/grub.d
+            state: directory
+            mode: '0755'
+
+        - name: Set GRUB bootloader password
+          lineinfile:
+            path: /etc/grub.d/40_custom
+            line: |
+              set superusers="root"
+              password_pbkdf2 root grub.pbkdf2.sha512.10000.<hash>
+            create: yes
+
+        - name: Update GRUB configuration
+          ansible.builtin.command: update-grub
 
     - name: Ensure systemd-timesyncd is configured
       block:
