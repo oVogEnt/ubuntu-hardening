@@ -19,11 +19,11 @@
         user: root
         job: "/usr/sbin/aide --check"
 
-    - name: Ensure bootloader password is set
-      lineinfile:
-        path: /etc/grub.d/40_custom
-        line: 'set superusers="root"\npassword_pbkdf2 root grub.pbkdf2.sha512.10000.<hash>'
-        create: yes
+        #    - name: Ensure bootloader password is set
+        #      lineinfile:
+        #        path: /etc/grub.d/40_custom
+        #        line: 'set superusers="root"\npassword_pbkdf2 root grub.pbkdf2.sha512.10000.<hash>'
+        #        create: yes
 
     - name: Ensure bootloader password is set
       block:
@@ -65,10 +65,10 @@
         state: present
         reload: yes
 
-    - name: Ensure /etc/hosts.deny is configured
-      lineinfile:
-        path: /etc/hosts.deny
-        line: "ALL: ALL"
+          #    - name: Ensure /etc/hosts.deny is configured
+      #      lineinfile:
+        #        path: /etc/hosts.deny
+          #        line: "ALL: ALL"
 
     - name: Ensure outbound and established connections are configured
       ufw:
