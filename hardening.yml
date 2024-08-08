@@ -70,18 +70,15 @@
         #        path: /etc/hosts.deny
           #        line: "ALL: ALL"
 
-    - name: Ensure outbound and established connections are configured
-      ufw:
-        rule: allow
-        direction: out
-        from_ip: any
-        to_ip: any
-        from_port: any
-        to_port: any
-        proto: "{{ item }}"
-      with_items:
-        - tcp
-        - udp
+          #    - name: Ensure outbound and established connections are configured
+          #      ufw:
+          #        rule: allow
+          #        direction: out
+          #        from_ip: any
+          #        to_ip: any
+          #        from_port: any
+          #        to_port: any
+          #        proto: any
 
     - name: Ensure journald is configured to write logfiles to persistent disk
       lineinfile:
