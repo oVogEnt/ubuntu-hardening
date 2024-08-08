@@ -3,7 +3,7 @@
   hosts: all
   gather_facts: true
   pre_tasks:
-        - name: Ensure noexec option set on /tmp partition
+    - name: Ensure noexec option set on /tmp partition
       mount:
         path: /tmp
         src: tmpfs
