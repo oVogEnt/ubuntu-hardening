@@ -26,9 +26,7 @@
         create: yes
 
     - name: Update GRUB configuration
-      shell: update-grub
-      args:
-        warn: false
+      ansible.builtin.command: update-grub
 
     - name: Ensure systemd-timesyncd is configured
       block:
